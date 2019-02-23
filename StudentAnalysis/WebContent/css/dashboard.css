@@ -1,0 +1,41 @@
+body{
+	font-family: monospace, sans-serif;
+}
+h3{ color: #ff849e; }
+.innercontainer h1{
+	font-size: 3.5rem;
+    font-weight: 400;
+}
+.dashboard{
+	margin: 5% 18%; padding:5%;
+	box-shadow: 0px 0px 12px 1px whitesmoke; 
+}
+input[type="file"]{
+	margin:10px;
+}
+.submit_btn{
+	color:white;
+	background-color: #FF6384;
+	width: 130px; border-radius:6px;
+	transition: box-shadow 200ms ease-out;
+}
+.submit_btn:hover{
+	    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+#menu{ 
+	cursor: pointer;
+}
+.fa-2x {
+    font-size: 1.7em;
+    color: #b7b7b7; 
+}
+.sidepanel{
+	position: absolute; top:0px; z-index:1;
+	width:30%; height:100%; background-color: #f7f7f7;
+    box-shadow: 0px 0px 1px 2px #e7e7e7; left:-27%; 
+    transition: 500ms ease-out;
+}
+.toggle{
+	transition: 700ms ease-out;
+	left:0%;
+}

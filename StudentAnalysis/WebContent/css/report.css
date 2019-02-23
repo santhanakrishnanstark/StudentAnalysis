@@ -1,0 +1,29 @@
+body{
+	font-family: monospace, sans-serif;
+}
+h3{ color: #ff849e; }
+.innercontainer h1{
+	font-size: 3rem;
+    font-weight: 400;
+}
+.dashboard_head{
+	margin: 0% 18%;  padding:2%; z-index:-1; 
+	box-shadow: 0px 5px 12px 1px whitesmoke; 
+}
+.dashboard{
+	margin: 1% 18%;  padding:2%;
+	box-shadow: 0px 0px 12px 1px whitesmoke; 
+}
+.header{
+	box-shadow: 0px 0px 12px 1px whitesmoke; 
+}
+.viewbtn{
+ 	 padding:1%; background-color: #ebebeb; color:gray !important;
+ 	 cursor: pointer; 
+} 
+.viewopt{
+	margin-top: 3%; position:relative;  left:20px; 	
+}
+.active{
+	background-color: #ffa3bd; color:#ffffff !important;
+}

@@ -1,0 +1,46 @@
+body{
+	font-family: monospace, sans-serif;
+}
+.innercontainer h1{
+	font-size: 3.5rem;
+    font-weight: 400;
+}
+.formcontainer{
+	border-radius: 4px;
+	box-shadow: 0px 0px 50px 1px #f3f3f3;
+	background-color: white;
+}
+form{
+	padding:15px;
+}
+.submit_btn{
+	color:white;
+	background-color: #FF6384;
+	width: 130px; border-radius:6px;
+	transition: box-shadow 200ms ease-out;
+}
+.submit_btn:hover{
+	    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+}
+a{  font-weight:bold;
+	color:#3f51b5 !important; 
+	cursor: pointer; 
+}
+.msgbox{
+	 position: absolute; left:15px; top: -30px;
+	  background-color: #ff6384; color:white;
+	  width:300px; height:40px;     box-shadow:1px 1px 10px 0px #e5e5e5;
+	  border-radius:10px 50px 0px 0px; padding:10px 10px;
+}
+.invalid{
+	border:1px solid red;
+}
+#msginfo{
+    animation:blinkingText 0.5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: white;    }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    100%{   color: white;    }
+}
