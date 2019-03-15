@@ -1,3 +1,6 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="com.analysis.dao.DbConnect"%>
+<%@page import="java.sql.Statement"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%!String name,dept; %>
@@ -9,6 +12,8 @@
  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/all.min.css">
  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/dashboard.css">
+ <link href="https://fonts.googleapis.com/css?family=Laila|Quicksand" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Srisakdi:700" rel="stylesheet">
 <title>Dashboard</title>
 	    <% 
  		 response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
@@ -26,17 +31,29 @@
 	<%if(session.getAttribute("user")!=null){ %> 
 	
 	<div class="sidepanel px-3 py-5">
-		<h4>MENU</h4>
+	<span id="menu" class="float-right"><i class="fa fa-bars fa-2x"></i></span>
+		<h4 class="text-center">MENU</h4>
+		<div class="mt-3 p-3">
+			<table>
+				<% Statement st = DbConnect.getConnection();
+					ResultSet rs = st.executeQuery("select distinct(semester) from uploaded_files ");
+					while(rs.next()){
+				%>	  	
+					<tr class="semrow mt-3">
+						<td><i class="fa fa-folder-open text-secondary"></i> 
+						<a onClick="openSemester(this)"><%=rs.getString(1) %></a></td>
+					</tr>
+				<% 	} 
+				%>
+			</table>
+		</div>
 	</div>
 	<div class="container innercontainer mt-5">
 		<div class="row">
-			<div class="col-9">
-				<h1>Student Analysis</h1> 
+			<div class="col-3">
 			</div>
-			<div class="col-2"></div>
-			<div class="col-1">
-				<span id="menu" class="float-right mt-3"><i class="fa fa-th-list fa-2x"></i></span> 
-			</div>
+			<div class="col-9"><h1>Student Analysis</h1> </div>
+			<div class="col-1"></div>
 		</div>   
 	</div>
 	
@@ -70,12 +87,8 @@
 		   			<label>Month :</label>
 		   				<select name="month" id="month" class="form-control">
 		   				<option selected>Select Month</option> 
-		   				<option value="JAN">JAN</option> <option value="FEB">FEB</option>
-		   				<option value="MAR">MAR</option> <option value="APR">APR</option>
-		   				<option value="MAY">MAY</option> <option value="JUN">JUN</option>
-		   				<option value="JUL">JUL</option> <option value="AUG">AUG</option>
-		   				<option value="SEP">SEP</option> <option value="OCT">OCT</option>
-		   				<option value="NOV">NOV</option> <option value="DEC">DEC</option>
+		   			    <option value="APR">APR</option>
+		   				<option value="NOV">NOV</option> 
 		   			</select>
 		   		  </div>
 		   		</div> 

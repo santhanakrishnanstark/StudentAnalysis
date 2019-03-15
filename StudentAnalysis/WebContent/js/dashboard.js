@@ -34,3 +34,29 @@ function createFolder(){
 			}
 	});
 }
+function openSemester(e){
+	let semester = $(e).text();
+	$.ajax({
+		url:"CreateSession",
+		type:"post",
+		data: {semester:semester},
+		success:function(result){
+			console.log('session stored');
+		}
+	});
+	$.ajax({
+		url:'PassPercentageImpl',
+		method:'post',
+		success:function(result){
+			console.log('calculated pass percentage for subject');
+		}		
+	});
+	$.ajax({
+		url:'SubjectwiseImpl',
+		method:'post',
+		success:function(result){
+			console.log('calculated subejct wise topper');
+			window.location='analysis-report.jsp';
+		}		
+	});
+}

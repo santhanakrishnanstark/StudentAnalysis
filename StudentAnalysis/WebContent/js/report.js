@@ -1,9 +1,13 @@
 
 $(document).ready(function(){
+	doAllProcess();
 	$("#listbtn").addClass("active");
 	$(".chart").hide();
 	$("#listbtn").bind("click",showListView);
 	$("#chartbtn").bind("click",showChartView);
+	
+	//$('#subpasspercent').DataTable();
+	
 });
 
 function showListView(){
@@ -14,4 +18,8 @@ function showListView(){
 function showChartView(){
 	$("#chartbtn").addClass("active"); $("#listbtn").removeClass("active");
 	$(".chart").show(); $(".list").hide();
+}
+
+function doAllProcess(){
+	
 }

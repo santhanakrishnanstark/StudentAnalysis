@@ -7,6 +7,8 @@
 <title>Homepage</title>
  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
  <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css?family=Srisakdi:700" rel="stylesheet">
+ <link rel="stylesheet" href="${pageContext.request.contextPath}/css/sweetalert2.min.css">
  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/index.css">
 </head>
 <body>
@@ -86,6 +88,8 @@
 	
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/sweetalert2.all.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
+	
 </body>
 </html>

@@ -1,10 +1,13 @@
 body{
-	font-family: monospace, sans-serif;
+	font-family: 'Quicksand', sans-serif;
 }
 h3{ color: #ff849e; }
+a{ font-family:serif; color: black !important;}
+
 .innercontainer h1{
 	font-size: 3.5rem;
     font-weight: 400;
+    font-family: 'Srisakdi', cursive;
 }
 .dashboard{
 	margin: 5% 18%; padding:5%;
@@ -23,19 +26,24 @@ input[type="file"]{
 	    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
 }
 #menu{ 
-	cursor: pointer;
+	cursor: pointer; padding:2%; border-radius:10px;
+	position:relative; left:8%; background-color:#FF6384; 
 }
 .fa-2x {
-    font-size: 1.7em;
-    color: #b7b7b7; 
+    font-size: 1.6em;
+    color: #ffffff;
 }
 .sidepanel{
 	position: absolute; top:0px; z-index:1;
 	width:30%; height:100%; background-color: #f7f7f7;
     box-shadow: 0px 0px 1px 2px #e7e7e7; left:-27%; 
-    transition: 500ms ease-out;
+    transition: 300ms ease-out; font-family: 'Laila', serif; 
 }
 .toggle{
-	transition: 700ms ease-out;
+	transition: 500ms ease-out;
 	left:0%;
+}
+a:hover{
+	cursor:pointer;
+	text-decoration: underline !important; 
 }

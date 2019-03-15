@@ -2,16 +2,18 @@ body{
 	font-family: monospace, sans-serif;
 }
 h3{ color: #ff849e; }
+h4{ color:#03A9F4; }
 .innercontainer h1{
 	font-size: 3rem;
     font-weight: 400;
+    font-family: 'Srisakdi', cursive; 
 }
 .dashboard_head{
 	margin: 0% 18%;  padding:2%; z-index:-1; 
 	box-shadow: 0px 5px 12px 1px whitesmoke; 
 }
 .dashboard{
-	margin: 1% 18%;  padding:2%;
+	margin: 1% 10%;  padding:2%;
 	box-shadow: 0px 0px 12px 1px whitesmoke; 
 }
 .header{

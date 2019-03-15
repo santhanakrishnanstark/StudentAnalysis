@@ -1,5 +1,5 @@
 
-$(document).ready(function(){
+$(document).ready(function(){ 
 	$('#registercontainer').hide();
 	$('#showRegister').bind("click",showRegisterForm);
 	$('#showLogin').bind("click",showLoginForm);
@@ -43,13 +43,25 @@ function checkUser(e){
 		success:function(result){
 			let res = $.trim(result);
 				if(res==='success'){ 
+						/* sewwet alert code*/	
+							 Swal.fire({
+							  type: 'success',
+							  title: 'Login Success',
+							  text: 'Redirecting....'
+							});
+						/***End***/
 						$('#msginfo').text("Login Success Redirecting... ! ");
 						$("input").removeClass("invalid");
 						$('#loginbtn').text('Submitting...');
-						setTimeout(myFunction, 2500); function myFunction(){
+						setTimeout(myFunction, 1000); function myFunction(){
 						window.location="dashboard.jsp";
 					}
 					}else{ 
+						Swal.fire({
+							  type: 'error',
+							  title: 'Invalid Credintial',
+							  text: 'Username/Password are not correct'
+							});
 						$('#msginfo').text(res); $("input").addClass("invalid");
 						$('#loginbtn').text('Submit');
 						}
