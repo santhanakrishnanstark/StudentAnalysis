@@ -16,8 +16,22 @@
 		<h1>Student Analysis</h1>      
 	</div>
 	<div class="container">
-		<div class="row">
-			<div class="col-md-6"></div>
+		<div class="row mt-5">
+			<div class="col-md-6">
+				<div class="row">
+					<div class="col-md-6">
+						<img src="${pageContext.request.contextPath}/images/ch5.png">
+					</div>
+					<div class="col-md-6">
+						<img src="${pageContext.request.contextPath}/images/ch1.png">
+					</div>
+				</div> 
+				<div class="row">
+					<div class="col-md-12">
+						<img src="${pageContext.request.contextPath}/images/ch6.png" height="280px">
+					</div>
+				</div> 
+			</div>
 			<div class="col-md-2"></div>
 			<div class="col-md-4">
 				<div class="formcontainer pt-4 pb-3 px-4">
@@ -82,7 +96,7 @@
 		</div>
 	</div>
 	
-	<footer class="container mt-5 p-4 text-center">
+	<footer class="container text-center">
 		<h5>@Gurunanak college</h5>   
 	</footer>
 	

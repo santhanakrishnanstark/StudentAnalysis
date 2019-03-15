@@ -46,6 +46,29 @@
 	</div>
 	<div class="list">
 		<div class="dashboard">
+			<h4>Class Topper </h4> 
+			<table id="classtopper" class="table table-bordered text-center mt-4">  
+				<thead>
+					<tr>
+						<th>S.No</th>
+						<th>Student Name</th>
+						<th>Register No</th>
+						<th>Percentage</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${classtopperlist}" var="list" varStatus="loop">
+							<tr>
+								<td>${loop.index+1}</td>
+								<td>${list.getName()}</td>
+								<td>${list.getRegno()}</td>
+								<td>${list.getPercentage()}</td>
+							</tr> 
+					 </c:forEach> 
+				</tbody>
+			</table>
+		</div>
+		<div class="dashboard">
 			<h4>Subjectwise Pass Percentage </h4> 
 			<table id="subpasspercent" class="table table-bordered text-center mt-4">  
 				<thead>
@@ -104,6 +127,32 @@
 	</div>
 	
 	<div class="chart">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="dashboard">
+					<h4>Class Topper </h4> 
+					<table class="table table-bordered text-center mt-4 highchart" data-graph-container-before="1" data-graph-type="column">  
+						<thead>
+							<tr>
+								<th>Student Name</th>
+								<th>Percentage</th>
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${classtopperlist}" var="list" varStatus="loop">
+									<tr>
+										<td>${list.getName()}</td>
+										<td>${list.getPercentage()}</td>
+									</tr> 
+							 </c:forEach> 
+						</tbody>
+					</table>
+				</div>
+			</div>	
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+		</div>
+		
 		<div class="row">
 		  <div class="col-6">
 				 <div class="dashboard">

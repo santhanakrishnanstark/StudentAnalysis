@@ -29,3 +29,6 @@ h4{ color:#03A9F4; }
 .active{
 	background-color: #ffa3bd; color:#ffffff !important;
 }
+.chart table{
+	display: none !important;
+}

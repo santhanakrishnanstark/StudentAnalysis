@@ -35,7 +35,14 @@ function createFolder(){
 	});
 }
 function openSemester(e){
-	let semester = $(e).text();
+	let semester = "";
+	if(($(e).text())!="View Report"){
+	   semester = $(e).text();  
+	}else{
+		semester = $(e).attr("value");
+	}
+		
+	console.log(semester); 
 	$.ajax({
 		url:"CreateSession",
 		type:"post",
@@ -56,6 +63,13 @@ function openSemester(e){
 		method:'post',
 		success:function(result){
 			console.log('calculated subejct wise topper');
+		}		
+	});
+	$.ajax({
+		url:'ClassTopperImpl',
+		method:'post',
+		success:function(result){
+			console.log('calculated class topper');
 			window.location='analysis-report.jsp';
 		}		
 	});
