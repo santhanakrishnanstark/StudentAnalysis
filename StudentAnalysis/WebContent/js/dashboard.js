@@ -13,24 +13,44 @@ function getSemester(){
 	semester=$('#sem').val();
 }
 function getSubjects(){
+	let studentyear = $("#stuyear").val();
+	let semester = $("#sem").val();
+	let month = $("#month").val();
+	let year = $("#year").val();
+	if(studentyear !="Choose year" && semester != "Choose Semester" && month !="Select Month" && year !=""){
 	fileinput="";
 	subjects=$('#sub').val();
 	for(let i=0; i<subjects; i++){
 		 fileinput += "<input type='file' name='"+i+"' class='form-control' >";
 	}
 	$("#fileinput").html(fileinput);
+  }else{
+	  alert("Please Provide all the Necessary Fields...");
+  }
 }
 function createFolder(){
 	let studentyear = $("#stuyear").val();
 	let semester = $("#sem").val();
 	let month = $("#month").val();
 	let year = $("#year").val();
+	
 	$.ajax({
 		url:"CreateFolder",
 		type:"post",
 		data:{stuyear: studentyear, sem: semester, month: month, year: year},
 		success:function(result){
 				console.log(result);
+			}
+	});
+}
+function search(e){
+	let data = $(e).val();
+	$.ajax({
+		url:"SearchSemester",
+		type:"post",
+		data:{semester : data},
+		success:function(result){
+				$(".semesters").html(result);
 			}
 	});
 }
@@ -70,6 +90,27 @@ function openSemester(e){
 		method:'post',
 		success:function(result){
 			console.log('calculated class topper');
+		}		
+	});
+	$.ajax({
+		url:'PassFailStudentsImpl',
+		method:'post',
+		success:function(result){
+			console.log('calculated pass fail student');
+		}		
+	});
+	$.ajax({
+		url:'StudentListImpl',
+		method:'post',
+		success:function(result){
+			console.log('list the student list');
+		}		
+	});
+	$.ajax({
+		url:'PassFailStudentsImpl',
+		method:'post',
+		success:function(result){
+			console.log('Pass Fail student list stored');
 			window.location='analysis-report.jsp';
 		}		
 	});

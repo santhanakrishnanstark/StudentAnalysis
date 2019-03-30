@@ -45,3 +45,36 @@ a{  font-weight:bold;
     50%{    color: transparent; }
     100%{   color: white;    }
 }
+#img1{
+	animation: ani1 1s ease-in-out;
+}
+#img2{
+	animation: ani2 1s ease-in-out;
+}
+#img3{
+	animation: ani3 1s ease-in-out;
+}
+@keyframes ani1{
+	from{
+		transform:rotateY(0deg);
+	}
+	to{
+		transform:rotateY(360deg);
+	}
+}
+@keyframes ani2{
+	from{
+		transform:rotateX(0deg);
+	}
+	to{
+		transform:rotateX(360deg);
+	}
+}
+@keyframes ani3{
+	from{
+		transform:translateY(80%);
+	}
+	to{
+		transform:translateY(0%);
+	}
+}

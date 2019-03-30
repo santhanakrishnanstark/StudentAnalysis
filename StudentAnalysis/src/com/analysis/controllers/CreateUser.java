@@ -30,7 +30,7 @@ public class CreateUser extends HttpServlet {
 			user.setDepartment(request.getParameter("department"));
 			user.setPassword(pass);
 			if(user.saveUser()) {
-			out.println("Register Successfully");
+			out.println("success");
 			}else {
 				out.println(user.getError());
 			}

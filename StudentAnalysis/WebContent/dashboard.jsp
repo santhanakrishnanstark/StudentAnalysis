@@ -64,8 +64,8 @@
 		   	  <div class="col-md-3">
 				<div class="form-group">
 		   			<label>Student Year:</label>
-		   			<select name="stuyear" id="stuyear" class="form-control">
-		   				<option selected>Choose year</option> 
+		   			<select name="stuyear" id="stuyear" class="form-control" required>
+		   				<option>Choose year</option> 
 		   				<option value="I">I</option> <option value="II">II</option>
 		   				<option value="III">III</option>
 		   			</select>
@@ -74,8 +74,8 @@
 		   	  <div class="col-md-3">
 				<div class="form-group">
 		   			<label>Semester :</label>
-		   			<select name="semester" id="sem" class="form-control">
-		   				<option selected>Choose Semester</option> 
+		   			<select name="semester" id="sem" class="form-control" required>
+		   				<option>Choose Semester</option> 
 		   				<option value="I">I</option> <option value="II">II</option>
 		   				<option value="III">III</option> <option value="IV">IV</option>
 		   				<option value="V">V</option> <option value="VI">VI</option>
@@ -85,8 +85,8 @@
 		   	  <div class="col-md-2">
 		   		  <div class="form-group">
 		   			<label>Month :</label>
-		   				<select name="month" id="month" class="form-control">
-		   				<option selected>Select Month</option> 
+		   				<select name="month" id="month" class="form-control" required>
+		   				<option>Select Month</option> 
 		   			    <option value="APR">APR</option>
 		   				<option value="NOV">NOV</option> 
 		   			</select>
@@ -95,7 +95,7 @@
 		   		<div class="col-md-2">
 		   		  <div class="form-group">
 		   			<label>Year :</label>
-		   			<input type="text" name="year" id="year" class="form-control">
+		   			<input type="text" name="year" id="year" class="form-control" required>
 		   		  </div>
 		   		</div> 
 		   		<div class="col-md-2">
@@ -127,21 +127,22 @@
 	  <div class="row">
 	  	<div class="col-md-8"></div>
 	  	<div class="col-md-4">
-	  		<input type="text" class="form-control" placeholder="Search" />
+	  		<input type="text" onkeyup="search(this)" class="form-control" placeholder="Search" />
 	  	</div>
 	  </div>
-		<div class="row mt-5">
+		<div class="row semesters mt-5">
 			<% Statement st1 = DbConnect.getConnection();
-					ResultSet rs1 = st.executeQuery("select distinct(semester) from uploaded_files ");
+					ResultSet rs1 = st.executeQuery("select u.semester,u1.username from uploaded_files AS u, users u1 WHERE u.uploaded_by=u1.id ");
 					while(rs1.next()){
 			%>
 				<div class="col-md-4">
 					<div class="card">
 					  <img src="${pageContext.request.contextPath}/images/mark.png" style="height:80px" class="card-img-top" alt="...">
 					  <div class="card-body">
-					    <h5 class="card-title"><%=rs1.getString(1) %></h5>
+					    <h6 class="card-title"><%=rs1.getString(1) %></h6>
 					    <p class="card-text"></p>
-					    <a onClick="openSemester(this)" value="<%=rs1.getString(1) %>" class="btn btn-secondary text-white">View Report</a>
+					    <a onClick="openSemester(this)" value="<%=rs1.getString(1) %>" class="btn reportbtn">View Report</a>
+					  	<footer class="blockquote-footer mt-2"> by <cite title="Source Title"> <%=rs1.getString(2) %></cite></footer>
 					  </div>
 					</div>
 				</div> 
@@ -165,12 +166,11 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        
+      <div class="modal-body text-center">
+        <h5>**** Instructions ****</h5>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-       <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-warning text-white" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

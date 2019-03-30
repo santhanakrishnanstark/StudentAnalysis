@@ -20,15 +20,15 @@
 			<div class="col-md-6">
 				<div class="row">
 					<div class="col-md-6">
-						<img src="${pageContext.request.contextPath}/images/ch5.png">
+						<img id="img1" src="${pageContext.request.contextPath}/images/ch5.png">
 					</div>
 					<div class="col-md-6">
-						<img src="${pageContext.request.contextPath}/images/ch1.png">
+						<img id="img2" src="${pageContext.request.contextPath}/images/ch1.png">
 					</div>
 				</div> 
 				<div class="row">
 					<div class="col-md-12">
-						<img src="${pageContext.request.contextPath}/images/ch6.png" height="280px">
+						<img id="img3" src="${pageContext.request.contextPath}/images/ch6.png" height="280px">
 					</div>
 				</div> 
 			</div>

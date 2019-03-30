@@ -27,7 +27,21 @@ function createUser(e){
 		type:'post',
 		data:$('#register').serialize(),
 		success:function(result){
-				alert(result);
+			let res = $.trim(result);
+			if(res==='success'){
+				 Swal.fire({
+					  type: 'success',
+					  title: 'Register Successfully',
+					  text: ' Login Now'
+					});
+				/***End***/
+			}else{
+				Swal.fire({
+					  type: 'error',
+					  title: 'Invalid Credintial',
+					  text: res
+					});
+			}
 		}
 	});
 	$('#registerbtn').text('Register');

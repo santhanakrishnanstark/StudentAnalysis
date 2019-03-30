@@ -13,7 +13,7 @@ public class DbConnect {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			 con = DriverManager.getConnection("jdbc:mysql://localhost:3306/analysis","root",""); 
-				st = con.createStatement();
+				st = con.createStatement(); 
 			
 		}catch(Exception e) {
 			st = null;
